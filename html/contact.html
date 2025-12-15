@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & FAQ - Baosen China Town Port Moresby</title>
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo/1.png" alt="LogoHeader">
+                <div class="logo-text">
+                    <h1>Baosen China Town</h1>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" >Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="project.html">The Project</a></li>
+                    <li><a href="space.html">By Space</a></li>
+                    <li><a href="investors.html">Investors</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html" class="active">Contact & FAQ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>Get in Touch - We're Here to Help with All Your Inquiries</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select an option</option>
+                                <option value="property-inquiry">Property Inquiry</option>
+                                <option value="investment-opportunity">Investment Opportunity</option>
+                                <option value="leasing-information">Leasing Information</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required>
+                                <span>I agree to the privacy policy and terms of service</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>rkiso@hbwhjt.com</p>
+                                <span>We'll respond within 24 hours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3>Call Us</h3>
+                                <p>+675 XXX XXXX</p>
+                                <span>Mon-Fri, 8:00 AM - 5:00 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>+675 XXXXXXXX</p>
+                                <span>Quick responses via chat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-details">
+                                <h3>Visit Us</h3>
+                                <p>xxxx Road, 5 mile</p>
+                                <p>Port Moresby, Papua New Guinea</p>
+                                <span>Showroom open daily</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-contact-buttons">
+                        <a href="tel:+675XXXXXXXXX" class="btn btn-call">
+                            <span>📞 Call Now</span>
+                        </a>
+                        <a href="https://wa.me/675XXXXXXXXX" class="btn btn-whatsapp" target="_blank">
+                            <span>💬 WhatsApp</span>
+                        </a>
+                        <a href="mailto:rkiso@hbwhjt.com" class="btn btn-email">
+                            <span>📧 Email Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-categories">
+                    <button class="faq-category active" data-category="general">General</button>
+                    <button class="faq-category" data-category="properties">Properties</button>
+                    <button class="faq-category" data-category="investment">Investment</button>
+                    <button class="faq-category" data-category="legal">Legal</button>
+                </div>
+                
+                <div class="faq-items">
+                    <div class="faq-category-content active" id="general">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is Baosen China Town in Port Moresby?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Baosen China Town Port Moresby is a premier mixed-use development located at the intersaction between Hurbery Murry Highway and Boroko Drive 5 Mile, Port Moresby. It features residential apartments, commercial spaces, retail units, and comprehensive amenities in a master-planned community.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Where is the project located?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The development is strategically located at Hurbery Murry Road in 5 mile, Port Moresby. This prime location offers excellent accessibility to major highways and the central business district.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are the development phases?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The project is being developed in three phases: Phase 1 (Shopping Mall - Completed), Phase 2 (Residential Towers - In Progress), and Phase 3 (Commercial & Hospitality - Planned).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category-content" id="properties">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What types of properties are available?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer residential apartments (1-4 bedrooms), commercial office spaces, and retail units. Each property type comes with different sizes and configurations to meet various needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are the price ranges?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Residential apartments start from PGK 650,000, commercial spaces are priced from PGK 2,500/sqm, and retail units start from PGK 3,800/sqm. Exact pricing depends on size, location, and specifications.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Are payment plans available?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we offer flexible payment plans including installment options. The specific terms depend on the property type and total value. Contact our sales team for customized payment solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category-content" id="investment">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What investment options are available?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer property ownership, commercial leasing with guaranteed returns, and joint venture opportunities for larger investors. Each option has different investment levels and return profiles.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What are the expected returns?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Expected annual returns range from 15-25% depending on the investment option. Commercial leasing offers guaranteed 7% returns, while property ownership provides both rental income and capital appreciation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Are there tax benefits for foreign investors?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, Papua New Guinea offers various tax incentives for foreign investors in real estate development. These include tax holidays, accelerated depreciation, and other benefits that enhance investment returns.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category-content" id="legal">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What legal documentation is provided?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>All property purchases include proper title documentation, sales agreements, and registration with the relevant PNG authorities. We provide comprehensive legal support throughout the process.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is foreign ownership allowed?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, foreign individuals and companies can own property in Papua New Guinea, particularly in designated development zones like Baosen Chinatown. We assist with all necessary approvals and registrations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What about property management?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer professional property management services including tenant placement, rent collection, maintenance, and 24/7 security. Management fees are competitive and transparent.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <!-- Interactive map (Google Maps embed). Replace the q=... value with exact address or coordinates if available -->
+                <div class="map-embed">
+                    <iframe
+                        title="Baosen Chinatown Location"
+                        src="https://www.google.com/maps?q=Baosen+Chinatown+Port+Moresby&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Fallback image if iframe blocked or for privacy / offline previews -->
+                <div class="map-fallback" aria-hidden="true">
+                    <img src="../images/contact/location-map.jpg" alt="Location Map - Baosen Chinatown">
+                    <div class="map-overlay">
+                        <h3>Baosen Chinatown Moresby</h3>
+                        <p>xxxx Road, 5 mile<br>Port Moresby, Papua New Guinea</p>
+                        <a href="https://maps.google.com?q=Baosen+Chinatown+Port+Moresby" class="btn" target="_blank" rel="noopener">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="../images/logo/2.png" alt="LogoFooter">
+                        <div class="logo-text">
+                            <h2 style = "color: #8ec7ff;">Baosen China Town</h2>
+                        </div>
+                    </div>
+                    <p>Bridging Cultures, Building Community.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="html/about.html">About Us</a></li>
+                        <li><a href="html/project.html">The Project</a></li>
+                        <li><a href="html/space.html">Properties</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Boroko Drive, 5 mile, Port Moresby, PNG</p>
+                    <p>Email: rkiso@hbwhjt.com</p>
+                    <p>Phone: +675 75888999</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/p/1KUXuha2mC/?mibextid=wwXIfr" class="social-link" target="_blank" aria-label="Facebook" rel="noopener">
+                            <img src="../images/Icons/facebook.png" alt="Facebook">
+                        </a>
+
+                        <a href="https://www.instagram.com/misslynrealator_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank" aria-label="Instagram">
+                            <img src="../images/Icons/instagram.png" alt="Instagram">
+                        </a>
+
+                        <a href="https://wa.me/67575888999" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <img src="../images/Icons/whatsapp.png" alt="WhatsApp">
+                        </a>
+
+                        <a href="mailto:rkiso@hbwhjt.com" class="social-link" aria-label="Email">
+                            <img src="../images/Icons/email.png" alt="Email">
+                         </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Baosen China Town Port Moresby. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/contact.js"></script>
+</body>
+</html>

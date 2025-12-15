@@ -1,0 +1,399 @@
+/* About Page Specific Styles */
+
+/* Import base styles */
+@import url('style.css');
+
+/* About Hero Section */
+.about-hero{
+  background: linear-gradient(rgba(7,22,51,0.6), rgba(7,22,51,0.6)), url('../images/about/Overview.webp');
+  background-size: cover;
+  background-position: center;
+  padding:150px 0 100px;
+  margin-top:70px;
+  text-align:center;
+  color:var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--cold);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Company Story Section */
+.company-story {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.story-content > p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+}
+
+.mission-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mission-point h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--cold);
+}
+
+.mission-point p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.story-images .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.image-item {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Developer Profile Section */
+.developer-profile {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.developer-profile h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.profile-text p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+}
+
+.company-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--navy-lighter);
+    border-radius: 8px;
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.profile-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Leadership Team Section */
+.leadership {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.leadership h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.team-member {
+    background-color: var(--navy-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.member-info {
+    padding: 2rem;
+}
+
+.member-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--cold);
+}
+
+.position {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.member-info p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+/* Project Timeline Section */
+.project-timeline {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.project-timeline h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--cold);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    background-color: var(--cold);
+    color: var(--navy);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 120px;
+    text-align: center;
+    z-index: 2;
+}
+
+.timeline-content {
+    background-color: var(--navy-lighter);
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 1;
+    margin: 0 2rem;
+    z-index: 2;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--cold);
+}
+
+.timeline-content p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+/* About CTA Section */
+.about-cta {
+    padding: 100px 0;
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('../images/about/Overview.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 968px) {
+    .story-grid,
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .story-images .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 60px;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+    }
+    
+    .timeline-content {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .story-content h2,
+    .developer-profile h2,
+    .leadership h2,
+    .project-timeline h2,
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn, .btn-whatsapp {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}

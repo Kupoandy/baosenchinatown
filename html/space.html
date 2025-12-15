@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties by Space - Baosen China Town Port Moresby</title>
+    <link rel="stylesheet" href="../css/space.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo/1.png" alt="LogoHeader">
+                <div class="logo-text">
+                    <h1>Baosen China Town</h1>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="project.html">The Project</a></li>
+                    <li><a href="space.html" class="active">By Space</a></li>
+                    <li><a href="investors.html">Investors</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact & FAQ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="space-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Properties by Space</h1>
+                <p>Discover Premium Residential and Commercial Spaces Available for Sale</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="space-categories">
+        <div class="container">
+            <h2>Available Property Types</h2>
+            
+            <!-- Filter buttons with dropdowns + custom budget input -->
+            <div class="filters">
+                <label class="filter-label">
+                    Property Type
+                    <select id="typeSelect" aria-label="Select property type">
+                        <option value="">-- Select Type --</option>
+                        <option value="all">All Properties</option>
+                        <option value="shopping-mall">Shopping Mall</option>
+                        <option value="residential">Residential Units</option>
+                        <option value="hotel-office">Hotel and Offices</option>
+                    </select>
+                </label>
+
+                <label class="filter-label">
+                    Budget Range
+                    <select id="budgetSelect" aria-label="Select budget range" disabled>
+                        <option value="">-- Select Budget Range --</option>
+                        <option value="800k-1m">K800,000 - K1,000,000</option>
+                        <option value="1m-1.5m">K1,000,000 - K1,500,000</option>
+                        <option value="1.5m-2m">K1,500,000 - K2,000,000</option>
+                        <option value="2m-2.5m">K2,000,000 - K2,500,000</option>
+                        <option value="2.5m-3m">K2,500,000 - K3,000,000</option>
+                        <option value="custom">Enter custom amount</option>
+                    </select>
+                </label>
+
+                <label id="customBudgetWrap" class="filter-label" style="display:none;">
+                    Enter Budget (K)
+                    <input id="customBudgetInput" type="number" min="0" placeholder="e.g. 750000" />
+                </label>
+
+                <div id="filtersNote" class="filters-note">Select a property type and budget to show results.</div>
+            </div>
+
+            <!-- Properties Grid (hidden until both type+budget specified) -->
+            <div class="properties-grid compact hidden" aria-live="polite">
+                <!-- Property cards will be populated by JavaScript -->
+            </div>
+
+            <!-- No results / prompt message -->
+            <div class="no-results" style="display: none;">
+                <p id="noResultsText">No properties found matching your criteria. Please adjust your filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="space-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in a Property?</h2>
+                <p>Contact our sales team to schedule a viewing or get more information about available units.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn">Contact Us</a>
+                    <a href="https://wa.me/67575888999" class="btn-whatsapp">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="../images/logo/2.png" alt="LogoFooter">
+                        <div class="logo-text">
+                            <h2 style = "color: #8ec7ff;">Baosen China Town</h2>
+                        </div>
+                    </div>
+                    <p>Bridging Cultures, Building Community.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="html/about.html">About Us</a></li>
+                        <li><a href="html/project.html">The Project</a></li>
+                        <li><a href="html/space.html">Properties</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Boroko Drive, 5 mile, Port Moresby, PNG</p>
+                    <p>Email: rkiso@hbwhjt.com</p>
+                    <p>Phone: +675 75888999</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/p/1KUXuha2mC/?mibextid=wwXIfr" class="social-link" target="_blank" aria-label="Facebook" rel="noopener">
+                            <img src="../images/Icons/facebook.png" alt="Facebook">
+                        </a>
+
+                        <a href="https://www.instagram.com/misslynrealator_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank" aria-label="Instagram">
+                            <img src="../images/Icons/instagram.png" alt="Instagram">
+                        </a>
+
+                        <a href="https://wa.me/67575888999" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <img src="../images/Icons/whatsapp.png" alt="WhatsApp">
+                        </a>
+
+                        <a href="mailto:rkiso@hbwhjt.com" class="social-link" aria-label="Email">
+                            <img src="../images/Icons/email.png" alt="Email">
+                         </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Baosen China Town Port Moresby. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/space.js"></script>
+</body>
+</html>

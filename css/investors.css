@@ -1,0 +1,551 @@
+@import url('style.css');
+
+.investors-hero {
+    background: linear-gradient(rgba(7,22,51,0.6), rgba(7,22,51,0.6)), url('../images/investors/4SEZ2025.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 100px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--cold);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.investment-overview {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.overview-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.overview-text > p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+}
+
+.investment-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--navy-light);
+    border-radius: 8px;
+    border: 1px solid var(--navy-lighter);
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.overview-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.investment-options {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.investment-options h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.option-card {
+    background-color: var(--navy);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--navy-lighter);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.option-card.featured {
+    border-color: var(--cold);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+
+.option-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background-color: var(--cold);
+    color: var(--navy);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-card h3 {
+    font-size: 1.5rem;
+    color: var(--cold);
+    margin-bottom: 1rem;
+}
+
+.option-card > p {
+    color: var(--gray-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.option-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.option-card li {
+    color: var(--gray-light);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--navy-lighter);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.option-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cold);
+    font-weight: bold;
+}
+
+.investment-range {
+    background-color: var(--navy-lighter);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.investment-range span {
+    color: var(--cold);
+    font-weight: 600;
+}
+
+.financial-projections {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.financial-projections h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.projections-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.chart-container {
+    background-color: var(--navy-light);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.chart-container h3 {
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.chart {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 200px;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.chart-bar {
+    background: linear-gradient(to top, var(--cold), #64ffda88);
+    width: 50px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: height 1s ease;
+}
+
+.chart-bar::after {
+    content: attr(data-value) '%';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cold);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-labels span {
+    color: var(--gray-light);
+    font-size: 0.8rem;
+}
+
+.projection-details h3 {
+    color: var(--white);
+    margin-bottom: 2rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.metric {
+    background-color: var(--navy-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metric h4 {
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.metric p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.financial-highlights h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.financial-highlights ul {
+    list-style: none;
+}
+
+.financial-highlights li {
+    color: var(--gray-light);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--navy-lighter);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.financial-highlights li:before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--cold);
+}
+
+.investor-testimonials {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.investor-testimonials h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: none;
+    text-align: center;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.testimonial-content {
+    background-color: var(--navy);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--navy-lighter);
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.testimonial-author strong {
+    color: var(--cold);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-author span {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.testimonial-prev,
+.testimonial-next {
+    background: none;
+    border: 1px solid var(--cold);
+    color: var(--cold);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background-color: var(--cold);
+    color: var(--navy);
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gray);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.testimonial-dots .dot.active {
+    background-color: var(--cold);
+}
+
+.investment-process {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.investment-process h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--navy-light);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+}
+
+.step-number {
+    background-color: var(--cold);
+    color: var(--navy);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 1.3rem;
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.investors-cta {
+    padding: 100px 0;
+    background: linear-gradient(rgba(7,22,51,0.6), rgba(7,22,51,0.6)), url('../images/investors/1SEZ2025.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 968px) {
+    .overview-content,
+    .projections-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .investment-stats,
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .overview-text h2,
+    .investment-options h2,
+    .financial-projections h2,
+    .investor-testimonials h2,
+    .investment-process h2,
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-content {
+        padding: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn, .btn-whatsapp {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}

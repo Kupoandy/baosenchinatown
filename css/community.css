@@ -1,0 +1,485 @@
+@import url('style.css');
+
+.community-hero {
+    background: linear-gradient(rgba(7,22,51,0.6), rgba(7,22,51,0.6)), url('../images/community/3SEZ2025.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 100px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--cold);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.community-vision {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.vision-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.vision-text > p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+}
+
+.vision-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vision-point h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--cold);
+}
+
+.vision-point p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.vision-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.vision-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.amenities {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.amenities h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.amenity-card {
+    background-color: var(--navy);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--navy-lighter);
+}
+
+.amenity-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.amenity-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.amenity-card h3 {
+    font-size: 1.5rem;
+    color: var(--cold);
+    margin-bottom: 1rem;
+}
+
+.amenity-card p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.local-impact {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.local-impact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.impact-stat {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--navy-light);
+    border-radius: 8px;
+}
+
+.impact-stat h3 {
+    font-size: 2.5rem;
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+}
+
+.impact-stat p {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.impact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.impact-item {
+    padding: 2rem;
+    background-color: var(--navy-light);
+    border-radius: 8px;
+}
+
+.impact-item h4 {
+    font-size: 1.3rem;
+    color: var(--cold);
+    margin-bottom: 1rem;
+}
+
+.impact-item p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.cultural-exchange {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.cultural-exchange h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.cultural-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.cultural-text h3 {
+    font-size: 1.8rem;
+    color: var(--cold);
+    margin-bottom: 1.5rem;
+}
+
+.cultural-text > p {
+    color: var(--gray-light);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.exchange-programs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.program {
+    padding: 1.5rem;
+    background-color: var(--navy);
+    border-radius: 8px;
+    border-left: 4px solid var(--cold);
+}
+
+.program h4 {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.program p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.sustainability {
+    padding: 100px 0;
+    background-color: var(--navy);
+}
+
+.sustainability h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.sustainability-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.sustainability-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: var(--navy-light);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.sustainability-item:hover {
+    transform: translateX(10px);
+}
+
+.sustainability-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.sustainability-text h3 {
+    font-size: 1.3rem;
+    color: var(--cold);
+    margin-bottom: 0.5rem;
+}
+
+.sustainability-text p {
+    color: var(--gray-light);
+    line-height: 1.6;
+}
+
+.community-events {
+    padding: 100px 0;
+    background-color: var(--navy-light);
+}
+
+.community-events h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    display: flex;
+    background-color: var(--navy);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.event-date {
+    background-color: var(--cold);
+    color: var(--navy);
+    padding: 1.5rem;
+    text-align: center;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.month {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.day {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.event-content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.event-content h3 {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.event-content p {
+    color: var(--gray-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.event-time {
+    color: var(--cold);
+    font-size: 0.9rem;
+}
+
+.community-cta {
+    padding: 100px 0;
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('../images/community/PCM2025.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 968px) {
+    .vision-content,
+    .cultural-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .impact-stats,
+    .impact-details,
+    .sustainability-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sustainability-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sustainability-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .vision-text h2,
+    .amenities h2,
+    .local-impact h2,
+    .cultural-exchange h2,
+    .sustainability h2,
+    .community-events h2,
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .amenities-grid,
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        min-width: auto;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn, .btn-whatsapp {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
