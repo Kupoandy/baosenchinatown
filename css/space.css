@@ -17,7 +17,7 @@
 
 .hero-content p {
     font-size: 1.3rem;
-    color: var(--gold);
+    color: var(--cold);
     max-width: 600px;
     margin: 0 auto;
 }
