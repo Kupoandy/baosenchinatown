@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ========== MOBILE MENU FUNCTIONALITY ==========
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    //close mobile menu when clicking on a link
+    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -18,287 +19,362 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Property data (each property now has a unique image file)
-    const properties = [
-        // Shopping Mall
-        { id: 1,  type: 'shopping-mall', name: 'Shop Code: 4-G-1',    area: '49.37 sqm',  category: 'Sold',      budget: '1m-1.5m', location: 'Ground Floor',       image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-1.png'  },
-        { id: 2,  type: 'shopping-mall', name: 'Shop Code: 4-G-2',    area: '91.88 sqm', category: 'Sold',       budget: '2m-2.5m', location: 'Ground Floor',        image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-2.png'  },
-        { id: 3,  type: 'shopping-mall', name: 'Shop Code: 4-G-3',    area: '91.04 sqm', category: 'sold',       budget: '1.5m-2m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-3.png'  },
-        { id: 4,  type: 'shopping-mall', name: 'Shop Code: 4-G-4',    area: '109.24 sqm', category: 'sold',      budget: '2.5m-3m',   location: 'Ground Floor',     image: '../images/ShoppingMallGroundFloor/GF CODE 4-G-4.png'  },
-        { id: 5,  type: 'shopping-mall', name: 'Shop Code: 4-G-5',    area: '88.20 sqm', category: 'sold',       budget: '1.5m-2m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-5.png'  },
-        { id: 6,  type: 'shopping-mall', name: 'Shop Code: 4-G-6',    area: '91.04 sqm', category: 'sold',       budget: '1.5m-2m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-6.png'  },
-        { id: 7,  type: 'shopping-mall', name: 'Shop Code: 4-G-7',    area: '105.80 sqm', category: 'Sold',      budget: '2.5m-3m',   location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-7.png'  },
-        { id: 8,  type: 'shopping-mall', name: 'Shop Code: 4-G-8',    area: '88.20 sqm', category: 'Available',  budget: '1.5m-2m',   location: 'Ground Floor', image: '../image/space/ShoppingMallGroundFloor/GF CODE 4-G-8.png'  },
-        { id: 9,  type: 'shopping-mall', name: 'Shop Code: 4-G-9',    area: '91.04 sqm',  category: 'sold',      budget: '1.5m-2m', location: 'Ground Floor',       image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-9.png'  },
-        { id: 10, type: 'shopping-mall', name: 'Shop Code: 4-G-10',   area: '105.84 sqm', category: 'sold',      budget: '2.5m-3m',   location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-10.png' },
-        { id: 11,  type: 'shopping-mall', name: 'Shop Code: 4-G-11',  area: '88.20 sqm', category: 'sold',       budget: '1.5m-2m', location: 'Ground Floor',        image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-11.png'  },
-        { id: 12,  type: 'shopping-mall', name: 'Shop Code: 4-G-12',  area: '91.03 sqm', category: 'AVAILABLE',  budget: '1.5m-2m',   location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-12.png'  },
-        { id: 13,  type: 'shopping-mall', name: 'Shop Code: 4-G-13',  area: '98.28 sqm', category: 'sold',       budget: '2.5m-3m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-13.png'  },
-        { id: 14,  type: 'shopping-mall', name: 'Shop Code: 4-G-14',  area: '81.90 sqm', category: 'Available',  budget: '1.5m-2m',   location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-14.png'  },
-        { id: 15,  type: 'shopping-mall', name: 'Shop Code: 4-G-15',  area: '84.62 sqm', category: 'sold',       budget: '2m-2.5m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-15.png'  },
-        { id: 16,  type: 'shopping-mall', name: 'Shop Code: 4-G-16',  area: '107.73 sqm', category: 'sold',      budget: '2m-2.5m',   location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-16.png'  },
-        { id: 17,  type: 'shopping-mall', name: 'Shop Code: 4-G-17',  area: '89.78 sqm', category: 'Available',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-17.png'  },
-        { id: 18,  type: 'shopping-mall', name: 'Shop Code: 4-G-18',  area: '92.66 sqm',  category: 'sold',      budget: '500k-800k', location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-18.png'  },
-        { id: 19, type: 'shopping-mall', name: 'Shop Code: 4-G-19',   area: '110.25 sqm', category: 'sold',      budget: '1m-1.5m',   location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-19.png' },
-        { id: 20,  type: 'shopping-mall', name: 'Shop Code: 4-G-20',  area: '83.13 sqm', category: 'AVAILABLE',  budget: '500k-800k', location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-20.png'  },
-        { id: 21,  type: 'shopping-mall', name: 'Shop Code: 4-G-21',  area: '41.37 sqm', category: 'sold',       budget: '800k-1m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 4-G-21.png'  },
-        { id: 22,  type: 'shopping-mall', name: 'Shop Code: 5-G-1',   area: '91.00 sqm', category: 'AVAILABLE',  budget: '1m-1.5m',   location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-1.png'  },
-        { id: 23,  type: 'shopping-mall', name: 'Shop Code: 5-G-2',   area: '87.78 sqm', category: 'sold',       budget: '1.5m-2m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-2.png'  },
-        { id: 24,  type: 'shopping-mall', name: 'Shop Code: 5-G-3',   area: '87.78 sqm', category: 'sold',       budget: '2m-2.5m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-3.png'  },
-        { id: 25,  type: 'shopping-mall', name: 'Shop Code: 5-G-4',   area: '87.78 sqm', category: 'Pre-Lease Available',  budget: '2m-2.5m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-4.png'  },
-        { id: 26,  type: 'shopping-mall', name: 'Shop Code: 5-G-5',   area: '87.78 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-5.png'  },
-        { id: 27,  type: 'shopping-mall', name: 'Shop Code: 5-G-6',   area: '87.78 sqm',  category: 'AVAILABLE',  budget: '500k-800k', location: 'Ground Floor',     image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-6.png'  },
-        { id: 28, type: 'shopping-mall', name: 'Shop Code: 5-G-7',    area: '87.78 sqm', category: 'AVAILABLE',  budget: '1m-1.5m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-7.png' },
-        { id: 29,  type: 'shopping-mall', name: 'Shop Code: 5-G-8',   area: '99.27 sqm', category: 'AVAILABLE',  budget: '500k-800k', location: 'Ground Floor', image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-8.png'  },
-        { id: 30,  type: 'shopping-mall', name: 'Shop Code: 5-G-9',   area: '2232.42 sqm', category: 'Appliance Supermarket',  budget: '800k-1m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-9.png'  },
-        { id: 31,  type: 'shopping-mall', name: 'Shop Code: 5-G-10',  area: '3878.34 sqm', category: 'Life Supermarket',  budget: '1m-1.5m',   location: 'Ground Floor',      image: '../images/space/ShoppingMallGroundFloor/GF CODE 5-G-10.png'  },
-        { id: 32,  type: 'shopping-mall', name: 'Shop Code: 5-G-1',   area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 33,  type: 'shopping-mall', name: 'Premium Store F2',   area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 34,  type: 'shopping-mall', name: 'Anchor Store G1',    area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 35,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 36,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 37, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 38,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 39,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 40, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 41,  type: 'shopping-mall', name: 'Retail Kiosk B2',    area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 42,  type: 'shopping-mall', name: 'Shop Unit C1',       area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 43,  type: 'shopping-mall', name: 'Shop Unit D2',       area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 44,  type: 'shopping-mall', name: 'Premium Store E1',   area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 45,  type: 'shopping-mall', name: 'Premium Store F2',   area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 46,  type: 'shopping-mall', name: 'Anchor Store G1',    area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 47,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 48,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 49, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 50,  type: 'shopping-mall', name: 'Retail Kiosk B2',    area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 51,  type: 'shopping-mall', name: 'Shop Unit C1',       area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 52,  type: 'shopping-mall', name: 'Shop Unit D2',       area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 53,  type: 'shopping-mall', name: 'Premium Store E1',   area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 54,  type: 'shopping-mall', name: 'Premium Store F2',   area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 55,  type: 'shopping-mall', name: 'Anchor Store G1',    area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 56,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 57,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 58, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 59,  type: 'shopping-mall', name: 'Retail Kiosk B2',    area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 60,  type: 'shopping-mall', name: 'Shop Unit C1',       area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 61,  type: 'shopping-mall', name: 'Shop Unit D2',       area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 62,  type: 'shopping-mall', name: 'Premium Store E1',   area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 63,  type: 'shopping-mall', name: 'Premium Store F2',   area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 64,  type: 'shopping-mall', name: 'Anchor Store G1',    area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 65,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 66,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 67, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 68,  type: 'shopping-mall', name: 'Food Court H1',      area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 69,  type: 'shopping-mall', name: 'Service Unit I2',    area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 70, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 71,  type: 'shopping-mall', name: 'Retail Kiosk B2',    area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 72,  type: 'shopping-mall', name: 'Shop Unit C1',       area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 73,  type: 'shopping-mall', name: 'Shop Unit D2',       area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 74,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 75,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 76,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 77,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 78,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 79, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 80,  type: 'shopping-mall', name: 'Retail Kiosk B2',     area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 81,  type: 'shopping-mall', name: 'Shop Unit C1',        area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 82,  type: 'shopping-mall', name: 'Shop Unit D2',        area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 83,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 84,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 85,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 86,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 87,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 88, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 89,  type: 'shopping-mall', name: 'Retail Kiosk B2',     area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 90,  type: 'shopping-mall', name: 'Shop Unit C1',        area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 91,  type: 'shopping-mall', name: 'Shop Unit D2',        area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 92,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 93,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 94,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 95,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 96,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 97, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 98,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 99,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 100, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 101,  type: 'shopping-mall', name: 'Retail Kiosk B2',     area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 102,  type: 'shopping-mall', name: 'Shop Unit C1',        area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 103,  type: 'shopping-mall', name: 'Shop Unit D2',        area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 104,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 105,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 106,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 107,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 108,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 109, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 110,  type: 'shopping-mall', name: 'Retail Kiosk B2',     area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 111,  type: 'shopping-mall', name: 'Shop Unit C1',        area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 112,  type: 'shopping-mall', name: 'Shop Unit D2',        area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 113,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 114,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 115,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 116,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 117,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 118, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
-        { id: 119,  type: 'shopping-mall', name: 'Retail Kiosk B2',     area: '100 sqm', category: 'sold',  budget: '500k-800k', location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 120,  type: 'shopping-mall', name: 'Shop Unit C1',        area: '150 sqm', category: 'sold',  budget: '800k-1m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 121,  type: 'shopping-mall', name: 'Shop Unit D2',        area: '200 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#'  },
-        { id: 122,  type: 'shopping-mall', name: 'Premium Store E1',    area: '250 sqm', category: 'sold',  budget: '1.5m-2m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 123,  type: 'shopping-mall', name: 'Premium Store F2',    area: '300 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 2',      image: '../images/properties/shoppingmall/#'  },
-        { id: 124,  type: 'shopping-mall', name: 'Anchor Store G1',     area: '350 sqm', category: 'sold',  budget: '2m-2.5m',   location: 'Level 3',      image: '../images/properties/shoppingmall/#'  },
-        { id: 125,  type: 'shopping-mall', name: 'Food Court H1',       area: '120 sqm', category: 'sold',  budget: '800k-1m',   location: 'Ground Floor', image: '../images/properties/shoppingmall/#'  },
-        { id: 126,  type: 'shopping-mall', name: 'Service Unit I2',     area: '90 sqm',  category: 'sold',  budget: '500k-800k', location: 'Basement',     image: '../images/properties/shoppingmall/#'  },
-        { id: 127, type: 'shopping-mall', name: 'Display Area J1',     area: '180 sqm', category: 'sold',  budget: '1m-1.5m',   location: 'Level 1',      image: '../images/properties/shoppingmall/#' },
+    // ========== PROPERTY DATA EXTRACTION FROM HTML ==========
+    function getPropertiesFromHTML() {
+        const propertyElements = document.querySelectorAll('[data-property]');
+        const properties = [];
+        
+        propertyElements.forEach((el, index) => {
+            const property = {
+                id: index + 1,
+                type: el.getAttribute('data-type'),
+                name: el.getAttribute('data-name'),
+                area: el.getAttribute('data-area'),
+                category: el.getAttribute('data-category'),
+                budget: el.getAttribute('data-budget'),
+                location: el.getAttribute('data-location'),
+                image: el.getAttribute('data-image'),
+                price: extractPrice(el.getAttribute('data-category'))
+            };
+            properties.push(property);
+        });
+        
+        return properties;
+    }
+    
+    // Helper function to extract price from category string
+    function extractPrice(category) {
+        if (!category) return 0;
+        
+        // For shopping mall properties that have "Sold", "Available", etc.
+        const lowerCategory = category.toLowerCase();
+        if (lowerCategory.includes('sold') || 
+            lowerCategory.includes('available') ||
+            lowerCategory.includes('pre-lease') ||
+            lowerCategory.includes('appliance') ||
+            lowerCategory.includes('life') ||
+            lowerCategory.includes('supermarket')) {
+            return 0;
+        }
+        
+        // For properties with actual price values like "K550,000"
+        const priceString = category.replace(/[^0-9.]/g, '');
+        
+        if (!priceString) return 0;
+        
+        const price = parseFloat(priceString);
+        return price < 1000 ? price * 1000 : price;
+    }
 
-
-        // Residential Units
-        { id: 11, type: 'residential',  name: 'Studio Apartment A', area: '45 sqm',  price: 550000,  budget: '500k-800k', location: 'Tower A, Level 5',  image: '../images/properties/residentalunit/#' },
-        { id: 12, type: 'residential',  name: 'Studio Apartment B', area: '45 sqm',  price: 580000,  budget: '500k-800k', location: 'Tower A, Level 8',  image: '../images/properties/residentalunit/#' },
-        { id: 13, type: 'residential',  name: 'One Bedroom C',      area: '65 sqm',  price: 750000,  budget: '500k-800k', location: 'Tower B, Level 3',  image: '../images/properties/residentalunit/#' },
-        { id: 14, type: 'residential',  name: 'One Bedroom D',      area: '65 sqm',  price: 820000,  budget: '800k-1m',   location: 'Tower B, Level 7',  image: '../images/properties/residentalunit/#' },
-        { id: 15, type: 'residential',  name: 'Two Bedroom E',      area: '95 sqm',  price: 1100000, budget: '1m-1.5m',   location: 'Tower C, Level 4',  image: '../images/properties/residentalunit/#' },
-        { id: 16, type: 'residential',  name: 'Two Bedroom F',      area: '95 sqm',  price: 1250000, budget: '1m-1.5m',   location: 'Tower C, Level 10', image: '../images/properties/residentalunit/#' },
-        { id: 17, type: 'residential',  name: 'Three Bedroom G',    area: '130 sqm', price: 1700000, budget: '1.5m-2m',   location: 'Tower D, Level 6',  image: '../images/properties/residentalunit/#' },
-        { id: 18, type: 'residential',  name: 'Three Bedroom H',    area: '130 sqm', price: 1850000, budget: '1.5m-2m',   location: 'Tower D, Level 12', image: '../images/properties/residentalunit/#' },
-        { id: 19, type: 'residential',  name: 'Penthouse I',        area: '180 sqm', price: 2200000, budget: '2m-2.5m',   location: 'Tower E, Level 18', image: '../images/properties/residentalunit/#' },
-        { id: 20, type: 'residential',  name: 'Penthouse J',        area: '200 sqm', price: 2450000, budget: '2m-2.5m',   location: 'Tower E, Level 20', image: '../images/properties/residentalunit/#' },
-
-        // Hotel and Offices
-        { id: 21, type: 'hotel-office', name: 'Office Suite A',     area: '120 sqm', price: 800000,  budget: '800k-1m',   location: 'Office Tower, Level 2',  image: '../images/properties/hotel&offices/#' },
-        { id: 22, type: 'hotel-office', name: 'Office Suite B',     area: '120 sqm', price: 850000,  budget: '800k-1m',   location: 'Office Tower, Level 5',  image: '../images/properties/hotel&offices/#' },
-        { id: 23, type: 'hotel-office', name: 'Office Complex C',   area: '200 sqm', price: 1150000, budget: '1m-1.5m',   location: 'Office Tower, Level 8',  image: '../images/properties/hotel&offices/#' },
-        { id: 24, type: 'hotel-office', name: 'Office Complex D',   area: '200 sqm', price: 1300000, budget: '1m-1.5m',   location: 'Office Tower, Level 12', image: '../images/properties/hotel&offices/#' },
-        { id: 25, type: 'hotel-office', name: 'Hotel Room Type A',  area: '30 sqm',  price: 600000,  budget: '500k-800k', location: 'Hotel Wing, Level 3',    image: '../images/properties/hotel&offices/#' },
-        { id: 26, type: 'hotel-office', name: 'Hotel Room Type B',  area: '30 sqm',  price: 650000,  budget: '500k-800k', location: 'Hotel Wing, Level 6',    image: '../images/properties/hotel&offices/#' },
-        { id: 27, type: 'hotel-office', name: 'Hotel Suite Deluxe',  area: '50 sqm',  price: 950000,  budget: '800k-1m',   location: 'Hotel Wing, Level 10',   image: '../images/properties/hotel&offices/#' },
-        { id: 28, type: 'hotel-office', name: 'Executive Suite',     area: '60 sqm',  price: 1450000, budget: '1m-1.5m',   location: 'Hotel Wing, Level 15',   image: '../images/properties/hotel&offices/#' },
-        { id: 29, type: 'hotel-office', name: 'Premium Suite',       area: '80 sqm',  price: 1950000, budget: '1.5m-2m',   location: 'Hotel Wing, Level 18',   image: '../images/properties/hotel&offices/#' },
-        { id: 30, type: 'hotel-office', name: 'Penthouse Suite',     area: '120 sqm', price: 2350000, budget: '2m-2.5m',   location: 'Hotel Wing, Level 22',   image: '../images/properties/hotel&offices/#' }
-    ];
-
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const budgetBtns = document.querySelectorAll('.budget-btn');
-    const propertiesGrid = document.querySelector('.properties-grid');
-    const noResults = document.querySelector('.no-results');
-
+    const properties = getPropertiesFromHTML();
+    
+    // ========== DOM ELEMENTS ==========
     const typeSelect = document.getElementById('typeSelect');
     const budgetSelect = document.getElementById('budgetSelect');
     const customBudgetWrap = document.getElementById('customBudgetWrap');
     const customBudgetInput = document.getElementById('customBudgetInput');
     const filtersNote = document.getElementById('filtersNote');
+    const propertiesGrid = document.querySelector('.properties-grid');
+    const noResults = document.querySelector('.no-results');
+    const noResultsText = document.getElementById('noResultsText');
 
-    // keep previous filter variables
+    // Lightbox elements
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    // ========== GLOBAL STATE ==========
     let currentType = '';
     let currentBudgetKey = '';
     let customBudget = null;
+    let currentFilteredProperties = [];
+    let currentImageIndex = 0;
+    let isLightboxOpen = false;
 
-    // enable budget select after choosing type
-    typeSelect.addEventListener('change', () => {
-        currentType = typeSelect.value;
-        budgetSelect.disabled = currentType === '' ;
-        // reset budget & custom input
+    // ========== LIGHTBOX FUNCTIONS ==========
+    function openLightbox(imageSrc, caption, propertyIndex) {
+        if (isLightboxOpen) return; // Prevent multiple lightboxes
+        
+        // Check if image source is valid
+        if (!imageSrc || imageSrc.includes('#') || imageSrc.trim() === '') {
+            console.log('Invalid image source, skipping lightbox');
+            return;
+        }
+        
+        lightboxImage.src = imageSrc;
+        lightboxImage.alt = caption;
+        lightboxCaption.textContent = caption;
+        currentImageIndex = propertyIndex;
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        isLightboxOpen = true;
+        
+        updateLightboxNavButtons();
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        lightboxImage.src = '';
+        lightboxCaption.textContent = '';
+        isLightboxOpen = false;
+    }
+
+    function showNextImage() {
+        if (currentFilteredProperties.length <= 1) return;
+        currentImageIndex = (currentImageIndex + 1) % currentFilteredProperties.length;
+        const prop = currentFilteredProperties[currentImageIndex];
+        openLightbox(prop.image, prop.name, currentImageIndex);
+    }
+
+    function showPrevImage() {
+        if (currentFilteredProperties.length <= 1) return;
+        currentImageIndex = (currentImageIndex - 1 + currentFilteredProperties.length) % currentFilteredProperties.length;
+        const prop = currentFilteredProperties[currentImageIndex];
+        openLightbox(prop.image, prop.name, currentImageIndex);
+    }
+
+    function updateLightboxNavButtons() {
+        if (currentFilteredProperties.length <= 1) {
+            lightboxPrev.style.display = 'none';
+            lightboxNext.style.display = 'none';
+        } else {
+            lightboxPrev.style.display = 'flex';
+            lightboxNext.style.display = 'flex';
+        }
+    }
+
+    // ========== LIGHTBOX EVENT LISTENERS ==========
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxNext.addEventListener('click', showNextImage);
+    lightboxPrev.addEventListener('click', showPrevImage);
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard controls for lightbox
+    document.addEventListener('keydown', (e) => {
+        if (!isLightboxOpen) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowRight':
+                showNextImage();
+                break;
+            case 'ArrowLeft':
+                showPrevImage();
+                break;
+        }
+    });
+
+    // ========== PREVENT LIGHTBOX FOR HEADER, FOOTER & SOCIAL IMAGES ==========
+    function preventLightboxOnNonPropertyImages() {
+        // Prevent lightbox on header images
+        const headerImages = document.querySelectorAll('header img');
+        headerImages.forEach(img => {
+            img.style.cursor = 'default';
+            img.parentElement.style.cursor = 'default';
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+
+        // Prevent lightbox on footer images
+        const footerImages = document.querySelectorAll('footer img');
+        footerImages.forEach(img => {
+            img.style.cursor = 'default';
+            img.parentElement.style.cursor = 'default';
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+
+        // Prevent lightbox on social link images
+        const socialImages = document.querySelectorAll('.social-link img');
+        socialImages.forEach(img => {
+            img.style.cursor = 'default';
+            img.parentElement.style.cursor = 'default';
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+
+        // Prevent lightbox on logo images
+        const logoImages = document.querySelectorAll('.logo img');
+        logoImages.forEach(img => {
+            img.style.cursor = 'default';
+            img.parentElement.style.cursor = 'default';
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+    }
+
+    // ========== FILTER FUNCTIONS ==========
+    // Enable budget select after choosing type
+    typeSelect.addEventListener('change', function() {
+        currentType = this.value;
+        budgetSelect.disabled = currentType === '';
+        
+        // Reset budget & custom input
         budgetSelect.value = '';
         customBudgetInput.value = '';
         customBudgetWrap.style.display = 'none';
         currentBudgetKey = '';
         customBudget = null;
-        // hide results until both chosen
-        document.querySelector('.properties-grid').classList.add('hidden');
-        document.querySelector('.no-results').style.display = 'block';
-        document.getElementById('noResultsText').textContent = 'Please select a budget to view properties.';
+        
+        // Hide results until both chosen
+        hidePropertiesGrid();
+        noResults.style.display = 'block';
+        noResultsText.textContent = 'Please select a budget to view properties.';
     });
 
-    // budget select change
-    budgetSelect.addEventListener('change', () => {
-        const val = budgetSelect.value;
+    // Budget select change
+    budgetSelect.addEventListener('change', function() {
+        const val = this.value;
+        
         if (!val) {
-            currentBudgetKey = '';
-            customBudget = null;
-            customBudgetWrap.style.display = 'none';
-            document.querySelector('.properties-grid').classList.add('hidden');
-            document.querySelector('.no-results').style.display = 'block';
-            document.getElementById('noResultsText').textContent = 'Please select a budget to view properties.';
+            resetFilters();
             return;
         }
 
         if (val === 'custom') {
-            customBudgetWrap.style.display = 'inline-block';
+            customBudgetWrap.style.display = 'flex';
             customBudgetInput.focus();
             currentBudgetKey = '';
             customBudget = null;
-            document.querySelector('.properties-grid').classList.add('hidden');
-            document.querySelector('.no-results').style.display = 'block';
-            document.getElementById('noResultsText').textContent = 'Enter your budget in the box to view properties (K).';
+            hidePropertiesGrid();
+            noResults.style.display = 'block';
+            noResultsText.textContent = 'Enter your budget in the box to view properties (K).';
             return;
         }
 
-        // selected a predefined range
+        // Selected a predefined range
         currentBudgetKey = val;
         customBudget = null;
         filterPropertiesIfReady();
     });
 
-    // custom budget input
-    customBudgetInput.addEventListener('input', () => {
-        const v = parseInt(customBudgetInput.value, 10);
+    // Custom budget input
+    customBudgetInput.addEventListener('input', function() {
+        const v = parseInt(this.value, 10);
         customBudget = Number.isFinite(v) ? v : null;
         filterPropertiesIfReady();
     });
 
+    function resetFilters() {
+        currentBudgetKey = '';
+        customBudget = null;
+        customBudgetWrap.style.display = 'none';
+        hidePropertiesGrid();
+        noResults.style.display = 'block';
+        noResultsText.textContent = 'Please select a budget to view properties.';
+    }
+
+    function hidePropertiesGrid() {
+        propertiesGrid.classList.add('hidden');
+        propertiesGrid.innerHTML = '';
+    }
+
     function filterPropertiesIfReady() {
-        // require a type selection and a budget selection/custom value
+        // Require a type selection and a budget selection/custom value
         if (!currentType || (currentBudgetKey === '' && (customBudget === null || customBudget === 0))) {
-            document.querySelector('.properties-grid').classList.add('hidden');
-            document.querySelector('.no-results').style.display = 'block';
-            document.getElementById('noResultsText').textContent = 'Select category and budget to view properties.';
+            hidePropertiesGrid();
+            noResults.style.display = 'block';
+            noResultsText.textContent = 'Select category and budget to view properties.';
             return;
         }
         filterProperties();
     }
 
-    // updated filterProperties to support custom budget and "don't show if < 500k"
     function filterProperties() {
-        // start from type filter
+        // Start from type filter
         let filtered = properties.filter(prop => {
             return currentType === 'all' || prop.type === currentType;
         });
 
-        // apply budget filter
+        // Apply budget filter
         if (currentBudgetKey && currentBudgetKey !== 'all') {
             filtered = filtered.filter(prop => prop.budget === currentBudgetKey);
         } else if (customBudget !== null) {
-            // if customBudget is less than 500,000 no properties should show
+            // If customBudget is less than 500,000 no properties should show
             if (customBudget < 500000) {
                 filtered = [];
             } else {
-                filtered = filtered.filter(prop => prop.price <= customBudget);
+                filtered = filtered.filter(prop => {
+                    if (prop.price === 0) {
+                        // For shopping mall properties without price, check if budget range matches
+                        const range = prop.budget.split('-');
+                        if (range.length === 2) {
+                            const min = getBudgetMin(range[0]);
+                            const max = getBudgetMax(range[1]);
+                            return customBudget >= min && customBudget <= max;
+                        }
+                        return false;
+                    }
+                    return prop.price <= customBudget;
+                });
             }
         }
 
-        const grid = document.querySelector('.properties-grid');
-        const noRes = document.querySelector('.no-results');
-        const noResText = document.getElementById('noResultsText');
+        currentFilteredProperties = filtered; // Store for lightbox navigation
+        displayFilteredProperties(filtered);
+    }
 
+    function getBudgetMin(budgetStr) {
+        // Convert "500k" to 500000, "1m" to 1000000, etc.
+        if (budgetStr.includes('k')) {
+            return parseInt(budgetStr.replace('k', '')) * 1000;
+        } else if (budgetStr.includes('m')) {
+            return parseInt(budgetStr.replace('m', '')) * 1000000;
+        }
+        return 0;
+    }
+
+    function getBudgetMax(budgetStr) {
+        return getBudgetMin(budgetStr);
+    }
+
+    function displayFilteredProperties(filtered) {
         if (filtered.length === 0) {
-            grid.innerHTML = '';
-            grid.classList.add('hidden');
-            noRes.style.display = 'block';
-            noResText.textContent = (customBudget !== null && customBudget < 500000)
+            hidePropertiesGrid();
+            noResults.style.display = 'block';
+            noResultsText.textContent = (customBudget !== null && customBudget < 500000)
                 ? 'No properties available for budgets below K500,000.'
                 : 'No properties found matching your criteria. Please adjust your filters.';
             return;
         }
 
-        noRes.style.display = 'none';
-        grid.classList.remove('hidden');
-        grid.innerHTML = filtered.map(prop => `
+        noResults.style.display = 'none';
+        propertiesGrid.classList.remove('hidden');
+        
+        // Create property cards
+        propertiesGrid.innerHTML = filtered.map((prop, index) => `
             <div class="property-card compact" data-property-id="${prop.id}">
-                <div class="property-image">
-                    <img src="${prop.image}" alt="${prop.name}" onerror="this.src='../images/placeholder.jpg'">
+                <div class="property-image" data-image-index="${index}">
+                    <img src="${prop.image}" alt="${prop.name}" loading="lazy" onerror="this.src='../images/placeholder.jpg'; this.onerror=null;">
                 </div>
                 <div class="property-info">
                     <h3>${prop.name}</h3>
-                    <p class="property-type">${prop.type.replace('-', ' ').toUpperCase()}</p>
-                    <p class="property-price">${prop.category.toLocaleString()}</p>
+                    <p class="property-type">${formatPropertyType(prop.type)}</p>
+                    <p class="property-price">${prop.category}</p>
                     <div class="property-details">
                         <div class="detail">
                             <span class="label">Area:</span>
@@ -308,16 +384,82 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="label">Location:</span>
                             <span class="value">${prop.location}</span>
                         </div>
+                        <div class="detail">
+                            <span class="label">Budget Range:</span>
+                            <span class="value">${formatBudgetRange(prop.budget)}</span>
+                        </div>
                     </div>
                     <div class="property-actions">
-                        <a href="contact.html?property=${prop.id}" class="btn-small">Inquire</a>
+                        <a href="contact.html?property=${encodeURIComponent(prop.name)}&type=${encodeURIComponent(prop.type)}" class="btn-small">Inquire</a>
                     </div>
                 </div>
             </div>
         `).join('');
+
+        // Add click event to property images for lightbox
+        const propertyImages = propertiesGrid.querySelectorAll('.property-image');
+        propertyImages.forEach((imgContainer, index) => {
+            imgContainer.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const prop = filtered[index];
+                // Check if image is valid (not placeholder or empty)
+                if (prop.image && !prop.image.includes('#') && prop.image.trim() !== '') {
+                    openLightbox(prop.image, prop.name, index);
+                }
+            });
+            
+            // Add zoom indicator on hover
+            const img = imgContainer.querySelector('img');
+            imgContainer.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.05)';
+            });
+            imgContainer.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
     }
 
-    // Initial display
-    filterProperties();
-});
+    function formatPropertyType(type) {
+        const types = {
+            'shopping-mall': 'SHOPPING MALL',
+            'residential': 'RESIDENTIAL UNIT',
+            'hotel-office': 'HOTEL & OFFICE'
+        };
+        return types[type] || type.toUpperCase().replace('-', ' ');
+    }
 
+    function formatBudgetRange(budgetKey) {
+        const ranges = {
+            '500k-800k': 'K500,000 - K800,000',
+            '800k-1m': 'K800,000 - K1,000,000',
+            '1m-1.5m': 'K1,000,000 - K1,500,000',
+            '1.5m-2m': 'K1,500,000 - K2,000,000',
+            '2m-2.5m': 'K2,000,000 - K2,500,000',
+            '2.5m-3m': 'K2,500,000 - K3,000,000'
+        };
+        return ranges[budgetKey] || budgetKey;
+    }
+
+    // ========== INITIALIZE ==========
+    function initializePage() {
+        // Initialize with no properties shown
+        hidePropertiesGrid();
+        noResults.style.display = 'block';
+        noResultsText.textContent = 'Select a property type and budget to view available properties.';
+        
+        // Hide lightbox navigation buttons initially
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+        
+        // Prevent lightbox on header, footer, and social images
+        preventLightboxOnNonPropertyImages();
+        
+        // Log number of properties loaded for debugging
+        console.log(`Loaded ${properties.length} properties from HTML`);
+    }
+
+    // Start the application
+    initializePage();
+});
