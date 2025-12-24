@@ -225,13 +225,13 @@ footer .logo img {
 .slide-content h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--white);
+    color: var(--navy);
 }
 
 .slide-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: var(--gray-light);
+    color: var(--navy);
 }
 
 .btn {

@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="value">${prop.area}</span>
                         </div>
                         <div class="detail">
-                            <span class="label">Location:</span>
+                            <span class="label">Location: </span>
                             <span class="value">${prop.location}</span>
                         </div>
                         <div class="detail">
@@ -437,7 +437,10 @@ document.addEventListener('DOMContentLoaded', function() {
             '1m-1.5m': 'K1,000,000 - K1,500,000',
             '1.5m-2m': 'K1,500,000 - K2,000,000',
             '2m-2.5m': 'K2,000,000 - K2,500,000',
-            '2.5m-3m': 'K2,500,000 - K3,000,000'
+            '2.5m-3m': 'K2,500,000 - K3,000,000',
+            '3m-3.5m': 'K3,000,000 - K3,500,000',
+            '3.5m-4m': 'K3,500,000 - K4,000,000',
+            '4m-4.5m': 'K4,000,000 - K4,500,000',
         };
         return ranges[budgetKey] || budgetKey;
     }

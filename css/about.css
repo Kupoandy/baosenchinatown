@@ -110,10 +110,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: wrap;
 }
 
 .profile-text p {
+    text-align: wrap;
     font-size: 1.1rem;
     margin-bottom: 3rem;
     color: var(--gray-light);
@@ -147,7 +148,7 @@
 .profile-image {
     border-radius: 8px;
     overflow: hidden;
-    height: 400px;
+    height: 200px;
 }
 
 .profile-image img {
@@ -299,6 +300,101 @@
     color: var(--gray-light);
     line-height: 1.6;
 }
+
+/* pdf*/
+.pdf-section {
+    margin-bottom: 4rem;
+}
+
+.pdf-section h2 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.pdf-section > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fffafa;
+    font-size: 1.1rem;
+}
+
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pdf-card {
+    background: #0c2946;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #e0c9a6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-card h3 {
+    color: #7c5c2b;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.pdf-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.pdf-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.pdf-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.view-btn {
+    background: #7c5c2b;
+    color: white;
+}
+
+.view-btn:hover {
+    background: transparent;
+    color: #7c5c2b;
+    border-color: #7c5c2b;
+}
+
+.download-btn {
+    background: transparent;
+    color: #7c5c2b;
+    border: 2px solid #7c5c2b;
+}
+
+.download-btn:hover {
+    background: #7c5c2b;
+    color: white;
+}
+
 
 /* About CTA Section */
 .about-cta {
