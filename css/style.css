@@ -73,8 +73,8 @@ header .container {
 
 /* Fixed-size logo boxes (image shown before text) */
 header .logo img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px; 
     object-fit: contain; /* keep aspect ratio, no cropping */
     display: block;
 }
@@ -88,7 +88,7 @@ footer .logo img {
 }
 
 .logo-text h1 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     color: var(--gold);
     margin: 0; /* reset previous negative margin */
     line-height: 1;
@@ -223,15 +223,17 @@ footer .logo img {
 }
 
 .slide-content h2 {
-    font-size: 3rem;
+    background-color: var(--navy-lighter);
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--navy);
 }
 
 .slide-content p {
+    background-color: var(--navy-lighter);
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: var(--navy);
+    color: var(--white);
 }
 
 .btn {
