@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
+    <!-- Top news ticker (site-wide) -->
+    <div class="news-ticker" role="region" aria-label="Latest announcements">
+      <div class="container">
+        <div class="news-ticker__viewport" aria-hidden="true">
+          <div class="news-ticker__strip" id="tickerStrip" aria-hidden="true">
+            <span class="news-item">New shops now available — Visit our <a href="space.html">Properties</a> page</span>
+            <span class="news-item">Phase 2 residential towers now open for pre-sale</span>
+            <span class="news-item">Special launch offers: financing plans available</span>
+            <span class="news-item">Contact us for leasing information</span>
+          </div>
+        </div>
+        <button class="ticker-pause" aria-label="Pause news ticker" title="Pause">❚❚</button>
+      </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -75,6 +90,8 @@
                                 <option value="general-inquiry">General Inquiry</option>
                                 <option value="other">Other</option>
                             </select>
+                            <input type="text" id="subjectText" name="subjectText" class="property-subject hidden" placeholder="Property details (auto-filled when you click 'Inquire')" aria-hidden="true" />
+                            <div id="propertySummary" class="property-summary" style="display:none;margin-top:8px;" aria-hidden="true"></div>
                         </div>
                         
                         <div class="form-group">
@@ -376,6 +393,57 @@
         </div>
     </footer>
 
+    <script>
+        // Inline fallback: show prefilled subject & summary immediately from URL params
+        (function() {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var propName = params.get('property');
+                var propType = params.get('type');
+                var propArea = params.get('area');
+                var propLocation = params.get('location');
+                var propId = params.get('id');
+                var passedSubject = params.get('subject');
+
+                if (!propName && !passedSubject) return;
+
+                var subjectInput = document.getElementById('subjectText');
+                var propertySummary = document.getElementById('propertySummary');
+                var contactForm = document.getElementById('contactForm');
+
+                var composed = passedSubject ? passedSubject : ( (propType||'').toUpperCase() + ' — ' + (propName||'') + (propArea ? ' — Area: ' + propArea : '') + (propLocation ? ' — Location: ' + propLocation : '') + (propId ? ' — Ref: ' + propId : '') );
+
+                if (subjectInput) {
+                    subjectInput.value = composed;
+                    subjectInput.classList.remove('hidden');
+                    subjectInput.setAttribute('aria-hidden', 'false');
+                    subjectInput.readOnly = true;
+                }
+
+                if (propertySummary) {
+                    propertySummary.innerHTML = '<div class="ps-title">' + (propName || '') + '</div>' +
+                        '<div class="ps-row">Type: <strong>' + ((propType || '').toUpperCase()) + '</strong></div>' +
+                        '<div class="ps-row">Area: <strong>' + (propArea || 'N/A') + '</strong></div>' +
+                        '<div class="ps-row">Location: <strong>' + (propLocation || 'N/A') + '</strong></div>' +
+                        '<div class="ps-row">Ref: <strong>' + (propId || 'N/A') + '</strong></div>';
+                    propertySummary.style.display = 'block';
+                    propertySummary.setAttribute('aria-hidden', 'false');
+                }
+
+                if (contactForm) contactForm.classList.add('has-property');
+
+                if (propertySummary && window.innerWidth <= 820) {
+                    setTimeout(function() {
+                        try { propertySummary.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+                        try { if (subjectInput) subjectInput.focus({ preventScroll: false }); } catch (e) {}
+                    }, 180);
+                }
+            } catch (e) {
+                // silent fail — main contact.js will handle
+            }
+        })();
+    </script>
     <script src="../js/contact.js"></script>
+    <script src="../js/ticker.js"></script>
 </body>
 </html>

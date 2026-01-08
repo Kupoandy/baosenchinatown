@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check on scroll
     window.addEventListener('scroll', checkPhaseVisibility);
 
+
     // ===== LIGHTBOX / IMAGE MODAL (SINGLE IMAGE ONLY) =====
     createLightbox();
     initImageClicks();

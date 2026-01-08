@@ -10,10 +10,10 @@
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 1.5rem; /* updated to 1.5rem */
     margin-bottom: 1rem;
     color: var(--white);
-}
+} 
 
 .hero-content p {
     font-size: 1.3rem;
@@ -35,10 +35,10 @@
 }
 
 .vision-text h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     color: var(--white);
-}
+}  
 
 .vision-text > p {
     font-size: 1.1rem;
@@ -85,10 +85,10 @@
 
 .leadership h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .team-grid {
     display: grid;
@@ -140,61 +140,6 @@
     font-weight: 500;
 }
 
-/*
-.member-info p {
-    color: var(--gray-light);
-    line-height: 1.6;
-}
-
-.amenities {
-    padding: 100px 0;
-    background-color: var(--navy-light);
-}
-
-.amenities h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-    color: var(--white);
-}
-
-.amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.amenity-card {
-    background-color: var(--navy);
-    padding: 2.5rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid var(--navy-lighter);
-}
-
-.amenity-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--cold);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.amenity-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.amenity-card h3 {
-    font-size: 1.5rem;
-    color: var(--cold);
-    margin-bottom: 1rem;
-}
-
-.amenity-card p {
-    color: var(--gray-light);
-    line-height: 1.6;
-}
-*/
 .local-impact {
     padding: 100px 0;
     background-color: var(--navy);
@@ -202,10 +147,10 @@
 
 .local-impact h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .impact-stats {
     display: grid;
@@ -262,10 +207,10 @@
 
 .cultural-exchange h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .cultural-content {
     display: grid;
@@ -340,10 +285,10 @@
 
 .sustainability h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .sustainability-content {
     display: grid;
@@ -388,10 +333,10 @@
 
 .community-events h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .events-grid {
     display: grid;
@@ -512,8 +457,8 @@
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
-    }
+        font-size: 1.5rem;
+    } 
     
     .vision-text h2,
     .amenities h2,

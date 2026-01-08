@@ -28,6 +28,87 @@ document.addEventListener('DOMContentLoaded', function () {
     const faqCategoryContents = document.querySelectorAll('.faq-category-content');
     const faqToggles = document.querySelectorAll('.faq-question');
 
+    // Prefill subject when redirected from property Inquire links
+    (function prefillSubjectFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const propName = params.get('property');
+        const propType = params.get('type');
+        const propArea = params.get('area');
+        const propLocation = params.get('location');
+        const propId = params.get('id');
+        const passedSubject = params.get('subject');
+
+        const subjectInput = document.getElementById('subjectText');
+        const subjectSelect = document.getElementById('subject');
+        const propertySummary = document.getElementById('propertySummary');
+
+        if (propName || passedSubject) {
+            if (subjectSelect) subjectSelect.value = 'property-inquiry';
+            const composed = passedSubject ? passedSubject : `${(propType || '').toUpperCase()} — ${propName || ''}${propArea ? ' — Area: ' + propArea : ''}${propLocation ? ' — Location: ' + propLocation : ''}${propId ? ' — Ref: ' + propId : ''}`;
+            if (subjectInput) {
+                subjectInput.value = composed;
+                subjectInput.classList.remove('hidden');
+                subjectInput.setAttribute('aria-hidden', 'false');
+                subjectInput.readOnly = true; // prefilled, make read-only until user edits
+
+                // If the user starts typing, make it editable (allow customizing the subject)
+                const unlock = () => { subjectInput.readOnly = false; subjectInput.removeEventListener('input', unlock); };
+                subjectInput.addEventListener('input', unlock, { once: true });
+            }
+
+            // Show a visible summary card so mobile users definitely see the property info
+            if (propertySummary) {
+                propertySummary.innerHTML = `
+                    <div class="ps-title">${propName}</div>
+                    <div class="ps-row">Type: <strong>${(propType || '').toUpperCase()}</strong></div>
+                    <div class="ps-row">Area: <strong>${propArea || 'N/A'}</strong></div>
+                    <div class="ps-row">Location: <strong>${propLocation || 'N/A'}</strong></div>
+                    <div class="ps-row">Ref: <strong>${propId || 'N/A'}</strong></div>
+                `;
+                propertySummary.style.display = 'block';
+                propertySummary.setAttribute('aria-hidden', 'false');
+            }
+
+            // add a class to the form to ensure CSS will reveal elements on small screens
+            if (contactForm) contactForm.classList.add('has-property');
+
+            // If on narrow screens, scroll the summary into view and focus the subject so mobile users see it
+            if (propertySummary && window.innerWidth <= 820) {
+                setTimeout(() => {
+                    try { propertySummary.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { /* ignore */ }
+                    if (subjectInput) try { subjectInput.focus({ preventScroll: false }); } catch (e) { /* ignore */ }
+                }, 250);
+            }
+
+            // Debug log to help diagnose mobile visibility issues
+            console.log('Contact page prefilled subject:', composed, 'params:', { propName, propType, propArea, propLocation, propId, passedSubject });
+        }
+
+        // Keep subjectText visibility in sync if user changes the select manually
+        const subjSelect = document.getElementById('subject');
+        if (subjSelect) {
+            subjSelect.addEventListener('change', () => {
+                const subjectInput = document.getElementById('subjectText');
+                const propertySummary = document.getElementById('propertySummary');
+                if (!subjectInput) return;
+                if (subjSelect.value === 'property-inquiry') {
+                    subjectInput.classList.remove('hidden');
+                    subjectInput.setAttribute('aria-hidden', 'false');
+                    if (propertySummary) propertySummary.style.display = 'block';
+                    if (contactForm) contactForm.classList.add('has-property');
+                } else {
+                    // hide only if it was auto-prefilled (no user edit)
+                    if (subjectInput && subjectInput.readOnly) {
+                        subjectInput.classList.add('hidden');
+                        subjectInput.setAttribute('aria-hidden', 'true');
+                        if (propertySummary) propertySummary.style.display = 'none';
+                        if (contactForm) contactForm.classList.remove('has-property');
+                    }
+                }
+            });
+        }
+    })();
+
     // --- Form helpers ---
     function createStatusEl() {
         let el = contactForm.querySelector('.form-status');
@@ -87,11 +168,14 @@ document.addEventListener('DOMContentLoaded', function () {
             showStatus('info', 'Sending your message — please wait.');
 
             // Real submission: POST to your server endpoint (you must implement /api/contact server-side)
+            const subjectOverrideEl = contactForm.querySelector('#subjectText');
+            const finalSubject = subjectOverrideEl && subjectOverrideEl.value.trim() ? subjectOverrideEl.value.trim() : contactForm.subject.value.trim();
+
             const payload = {
                 name: contactForm.name.value.trim(),
                 email: contactForm.email.value.trim(),
                 phone: contactForm.phone.value.trim(),
-                subject: contactForm.subject.value.trim(),
+                subject: finalSubject,
                 message: contactForm.message.value.trim(),
                 // receiver address included so backend knows where to deliver
                 to: 'rkiso@hbwhjt.com'

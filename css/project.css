@@ -10,10 +10,10 @@
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 1.5rem; /* updated to 1.5rem */
     margin-bottom: 1rem;
     color: var(--white);
-}
+}  
 
 .hero-content p {
     font-size: 1.3rem;
@@ -35,10 +35,10 @@
 }
 
 .overview-text h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     color: var(--white);
-}
+}  
 
 .overview-text > p {
     font-size: 1.1rem;
@@ -92,10 +92,10 @@
 
 .phases-detailed h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .phases-container {
     max-width: 1000px;
@@ -211,10 +211,10 @@
 
 .location h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 4rem;
     color: var(--white);
-}
+} 
 
 .location-content {
     display: grid;
@@ -294,10 +294,10 @@
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--white);
-}
+} 
 
 .cta-content p {
     font-size: 1.2rem;
@@ -333,14 +333,14 @@
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     
     .overview-text h2,
     .phases-detailed h2,
     .location h2,
     .cta-content h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .phase-header {

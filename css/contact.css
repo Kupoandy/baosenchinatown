@@ -33,10 +33,10 @@ body{
 .contact-hero .hero-content h1{
   margin:0;
   padding:0;
-  font-size:3.5rem;
+  font-size:1.5rem;
   line-height:1.05;
   color:var(--gold);
-}
+}  
 .hero-content p,
 .contact-hero .hero-content p{
   margin:0;
@@ -157,6 +157,21 @@ header .logo h1 {
         font-size: 1.2rem;
     }
 }
+
+/* Property summary + subject visibility when redirected from Inquire */
+.property-subject.hidden { display: none; }
+.property-summary { display: none; background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 8px; color: var(--white); font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.04); }
+.has-property .property-subject { display: block !important; margin-top: 8px; background: rgba(255,255,255,0.02); padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04); color: var(--gold); }
+.has-property .property-summary { display: block !important; }
+.property-summary .ps-title { font-weight: 700; color: var(--cold); margin-bottom: 6px; }
+.property-summary .ps-row { font-size: 0.95rem; color: var(--gray-light); margin-bottom: 4px; }
+
+/* Mobile emphasis to make the summary & subject unmistakable on small screens */
+@media (max-width:820px) {
+  .has-property .property-summary { border: 2px solid var(--brand); background: linear-gradient(180deg, rgba(11,124,255,0.06), rgba(11,124,255,0.02)); padding: 14px; margin: 10px 0; }
+  .has-property .property-subject { display: block !important; margin-top: 10px; font-size: 0.98rem; }
+}
+
 
 /* Responsive breakpoints consistent with other pages */
 @media (max-width:1024px){

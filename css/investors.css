@@ -10,10 +10,10 @@
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 1.5rem; /* updated to 1.5rem */
     margin-bottom: 1rem;
     color: var(--white);
-}
+}  
 
 .hero-content p {
     font-size: 1.3rem;
@@ -35,10 +35,10 @@
 }
 
 .overview-text h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     color: var(--white);
-}
+}  
 
 .overview-text > p {
     font-size: 1.1rem;
@@ -472,10 +472,10 @@
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--white);
-}
+} 
 
 .cta-content p {
     font-size: 1.2rem;
@@ -518,8 +518,8 @@
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
-    }
+        font-size: 1.5rem;
+    } 
     
     .overview-text h2,
     .investment-options h2,

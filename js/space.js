@@ -23,12 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function getPropertiesFromHTML() {
         const propertyElements = document.querySelectorAll('[data-property]');
         const properties = [];
+        const seenNames = new Set();
         
         propertyElements.forEach((el, index) => {
+            let name = el.getAttribute('data-name') || `Property ${index+1}`;
+            // Ensure each visible name is unique; append reference if duplicate
+            if (seenNames.has(name)) {
+                name = `${name} (ref ${index + 1})`;
+            }
+            seenNames.add(name);
+
             const property = {
                 id: index + 1,
                 type: el.getAttribute('data-type'),
-                name: el.getAttribute('data-name'),
+                name: name,
                 area: el.getAttribute('data-area'),
                 category: el.getAttribute('data-category'),
                 budget: el.getAttribute('data-budget'),
@@ -390,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="property-actions">
-                        <a href="contact.html?property=${encodeURIComponent(prop.name)}&type=${encodeURIComponent(prop.type)}" class="btn-small">Inquire</a>
+                        <a href="contact.html?property=${encodeURIComponent(prop.name)}&type=${encodeURIComponent(prop.type)}&area=${encodeURIComponent(prop.area || '')}&location=${encodeURIComponent(prop.location || '')}&id=${prop.id}&subject=${encodeURIComponent(`${prop.type.toUpperCase()} — ${prop.name} — Area: ${prop.area || 'N/A'} — Location: ${prop.location || 'N/A'} — Ref: ${prop.id}`)}" class="btn-small">Inquire</a>
                     </div>
                 </div>
             </div>

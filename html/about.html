@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="../css/style.css"> <!-- must be last -->
 </head>
 <body>
+    <!-- Top news ticker (site-wide) -->
+    <div class="news-ticker" role="region" aria-label="Latest announcements">
+      <div class="container">
+        <div class="news-ticker__viewport" aria-hidden="true">
+          <div class="news-ticker__strip" id="tickerStrip" aria-hidden="true">
+            <span class="news-item">New shops now available — Visit our <a href="space.html">Properties</a> page</span>
+            <span class="news-item">Phase 2 residential towers now open for pre-sale</span>
+            <span class="news-item">Special launch offers: financing plans available</span>
+            <span class="news-item">Contact us for leasing information</span>
+          </div>
+        </div>
+        <button class="ticker-pause" aria-label="Pause news ticker" title="Pause">❚❚</button>
+      </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="logo">
@@ -96,10 +111,10 @@
             <h2>About Baosen International Holdings Ltd.</h2>
             <div class="profile-content">
                 <div class="profile-text">
-                    <p>Baosen is a Real Estate Development Company and is a wholly-owned subsidiary of Hubei Wanhao Group (China). Hubei Wanhao Property Group was established in 2001, had developed over 10 million square meters of real estate over the past 2 decades. It's diverse portfolio includes science and technology parks for leading Chinese Universities, high end residential communities and iconic commercial landmarks. The company has consistently received industry regonisation, including outstanding project awards from professional organisations.
+                    <p>Baosen is a Real Estate Development Company and is a wholly-owned subsidiary of Hubei Wanhao Group (China). Hubei Wanhao Property Group was established in 2001, had developed over 10 million square meters of real estate over the past 2 decades. It's diverse portfolio includes science and technology parks for leading Chinese Universities, high end residential communities and iconic commercial landmarks. The company has consistently received industry recognition, including outstanding project awards from professional organisations.
                     </p>
                     <p>
-                        Hubei Wanhao ranks among China's top 500 private enterprises. Its expansion into Papua New Guinea represents both  step towards strenthening bilateral relations and an opportunity to set a new benchmark for high-quality real estate in the region. Commited to innovation and excellence, we aim to elevaye the local living experience through world-class developments.
+                        Hubei Wanhao ranks among China's top 500 private enterprises. Its expansion into Papua New Guinea represents both  step towards strengthening bilateral relations and an opportunity to set a new benchmark for high-quality real estate in the region. Commited to innovation and excellence, we aim to elevate the local living experience through world-class developments.
                     </p>
                     <div class="company-stats">
                         <div class="stat">
@@ -141,7 +156,7 @@
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="../images/about/Mr Eric Wang.jpg" alt="Sales and Marketing Manager">
+                        <img src="../images/about/" alt="Sales and Marketing Manager">
                     </div>
                     <div class="member-info">
                         <h3>Mr Eric Wang</h3>
@@ -291,5 +306,5 @@
     </footer>
 
     <script src="../js/about.js"></script>
-</body>
+    <script src="../js/ticker.js"></script></body>
 </html>

@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Top news ticker (site-wide) -->
+    <div class="news-ticker" role="region" aria-label="Latest announcements">
+      <div class="container">
+        <div class="news-ticker__viewport" aria-hidden="true">
+          <div class="news-ticker__strip" id="tickerStrip" aria-hidden="true">
+            <span class="news-item">New shops now available — Visit our <a href="html/space.html">Properties</a> page</span>
+            <span class="news-item">Phase 2 residential towers now open for pre-sale</span>
+            <span class="news-item">Special launch offers: financing plans available</span>
+            <span class="news-item">Contact us for leasing information</span>
+          </div>
+        </div>
+        <button class="ticker-pause" aria-label="Pause news ticker" title="Pause">❚❚</button>
+      </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -265,6 +281,7 @@
         </div>
     </footer>
 
+    <script src="js/ticker.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
